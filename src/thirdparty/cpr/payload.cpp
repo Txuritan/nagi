@@ -1,9 +1,9 @@
-#include "payload.h"
+#include "payload.hpp"
 
 #include <initializer_list>
 #include <string>
 
-#include "util.h"
+#include "util.hpp"
 
 namespace cpr {
 

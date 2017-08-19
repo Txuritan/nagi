@@ -7,8 +7,7 @@
 namespace Nagi {
     class ApplicationWindowNagi : public Gtk::ApplicationWindow {
     public:
-        ApplicationWindowNagi(BaseObjectType *cobject,
-                              const Glib::RefPtr<Gtk::Builder> &refBuilder);
+        ApplicationWindowNagi(BaseObjectType *cobject, const Glib::RefPtr<Gtk::Builder> &refBuilder);
 
         static ApplicationWindowNagi *create();
 

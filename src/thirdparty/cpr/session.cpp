@@ -1,4 +1,4 @@
-#include "session.h"
+#include "session.hpp"
 
 #include <algorithm>
 #include <functional>
@@ -6,8 +6,8 @@
 
 #include <curl/curl.h>
 
-#include "curlholder.h"
-#include "util.h"
+#include "curlholder.hpp"
+#include "util.hpp"
 
 namespace cpr {
 

@@ -57,7 +57,7 @@ namespace Nagi {
 
         auto refBuilder = Gtk::Builder::create();
         try {
-            refBuilder->add_from_resource("/com/github/txuritan/nagi/ui/nagi.ui");
+            refBuilder->add_from_resource("/com/github/txuritan/nagi/ui/WindowNagi.ui");
         }
         catch (const Glib::Error &ex) {
             std::cerr << "ApplicationNagi::on_startup(): " << ex.what() << std::endl;
@@ -69,7 +69,7 @@ namespace Nagi {
         if (app_menu) {
             set_app_menu(app_menu);
         } else {
-            std::cerr << "ApplicationNagi::on_startup(): No \"menuApp\" object in nagi.ui"
+            std::cerr << "ApplicationNagi::on_startup(): No \"menuApp\" object in WindowNagi.ui"
                       << std::endl;
         }
     }

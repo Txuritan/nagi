@@ -2,5 +2,11 @@
 <gresources>
     <gresource prefix="/com/github/txuritan/nagi">
         <file preprocess="xml-stripblanks">ui/WindowNagi.ui</file>
+
+        <file preprocess="xml-stripblanks">ui/WidgetAnimeBig.ui</file>
+        <file preprocess="xml-stripblanks">ui/WidgetAnimeSmall.ui</file>
+
+        <file preprocess="xml-stripblanks">ui/WidgetMangaBig.ui</file>
+        <file preprocess="xml-stripblanks">ui/WidgetMangaSmall.ui</file>
     </gresource>
 </gresources>

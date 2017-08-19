@@ -1,4 +1,4 @@
-#include "cprtypes.h"
+#include "cprtypes.hpp"
 
 #include <algorithm>
 #include <cctype>

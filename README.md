@@ -7,5 +7,13 @@ If you think you know where (or how) I the got the name, message me and we will 
 [![Build Status](https://travis-ci.org/Txuritan/nagi.svg?branch=master)](https://travis-ci.org/Txuritan/nagi)
 [![Build status](https://ci.appveyor.com/api/projects/status/tpoi44lehy3deig0?svg=true)](https://ci.appveyor.com/project/Txuritan/nagi)
 
+^ These mean nothing at the moment
+
+### Todo
+  * API
+    * Kitsu
+    * MAL
+  * Finish GUI
+
 ### Fun Fact
 This is the first project that I've made that first compiled on OSX with Travis CI, I mean I use Windows how come Appveyor didn't work first.

@@ -28,6 +28,20 @@ link_directories (${GTKMM_LIBRARY_DIRS})
 include_directories (${GTKMM_INCLUDE_DIRS})
 add_definitions (${GTKMM_CFLAGS_OTHER})
 
+set (GLIB_RESOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/nagi/gui/Resource.c)
+
+_pkgconfig_invoke ("glib-2.0" GLIB2 PREFIX "" "--variable=prefix")
+find_program (GLIB_COMPILE_RESOURCES
+              NAMES glib-compile-resources
+              HINTS ${GLIB2_PREFIX})
+set (GCR_COMMAND "${GLIB_COMPILE_RESOURCES} --generate-source --sourcedir=${CMAKE_CURRENT_SOURCE_DIR}/data --target=${CMAKE_CURRENT_SOURCE_DIR}/src/nagi/gui/Resource.c ${CMAKE_CURRENT_SOURCE_DIR}/data/nagi.gresource.xml")
+message (${GCR_COMMAND})
+add_custom_command (
+        OUTPUT ${GLIB_RESOURCES}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/data
+        COMMAND ${GCR_COMMAND}
+)
+
 file (
         GLOB
 
@@ -44,19 +58,7 @@ file (
         src/thirdparty/tinyxml2/*.*
 )
 
-_pkgconfig_invoke ("glib-2.0" GLIB2 PREFIX "" "--variable=prefix")
-find_program (GLIB_COMPILE_RESOURCES
-              NAMES glib-compile-resources
-              HINTS ${GLIB2_PREFIX})
-set (GCR_COMMAND "${GLIB_COMPILE_RESOURCES} --generate-source --sourcedir=${CMAKE_CURRENT_SOURCE_DIR}/data --target=${CMAKE_CURRENT_SOURCE_DIR}/src/nagi/gui/Resource.c ${CMAKE_CURRENT_SOURCE_DIR}/data/nagi.gresource.xml")
-message (${GCR_COMMAND})
-add_custom_command (
-        OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/src/nagi/gui/Resource.c
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/data
-        COMMAND ${GCR_COMMAND}
-)
-
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-register")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-register -Wno-ignored-attributes")
 
 if (WIN32)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-incompatible-ms-struct")

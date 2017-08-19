@@ -1,6 +1,6 @@
-#include "cookies.h"
+#include "cookies.hpp"
 
-#include "util.h"
+#include "util.hpp"
 
 namespace cpr {
 

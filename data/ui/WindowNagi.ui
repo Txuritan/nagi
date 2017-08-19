@@ -89,6 +89,8 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="show_border">False</property>
+                        <property name="scrollable">True</property>
+                        <property name="enable_popup">True</property>
                         <child>
                           <object class="GtkScrolledWindow">
                             <property name="visible">True</property>

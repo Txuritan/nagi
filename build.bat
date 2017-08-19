@@ -13,7 +13,7 @@ echo Flags %setupOrBuild%, %gccClang%
 if !setupOrBuild! EQU setup (
     echo Moving to root of the C drive
     cd C:\
-    
+
     if exist C:\msys64 (
         rmdir C:\msys64
     )
@@ -21,8 +21,7 @@ if !setupOrBuild! EQU setup (
     REM if not exist C:\msys64 (
         REM echo Msys2 doesn't exist
         echo Downloading Msys2
-        set MSYS2_URL="https://downloads.sourceforge.net/project/msys2/Base/x86_64/msys2-base-x86_64-20161025.tar.xz"
-        appveyor DownloadFile -Url %MSYS2_URL% -FileName msys2-base-x86_64-20161025.tar.xz
+        curl -O https://downloads.sourceforge.net/project/msys2/Base/x86_64/msys2-base-x86_64-20161025.tar.xz
 
 
         echo Unpacking Msys2

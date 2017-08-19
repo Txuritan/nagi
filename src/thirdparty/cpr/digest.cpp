@@ -1,4 +1,4 @@
-#include "digest.h"
+#include "digest.hpp"
 
 namespace cpr {
 
