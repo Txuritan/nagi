@@ -5,6 +5,7 @@ configuration:
   - Release
 
 install:
+  - dir
   - cd C:\
 
   - set MSYS2_URL="https://downloads.sourceforge.net/project/msys2/Base/x86_64/msys2-base-x86_64-20161025.tar.xz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fmsys2%2Ffiles%2FBase%2Fx86_64%2F&ts=1503114236&use_mirror=gigenet"
