@@ -17,5 +17,5 @@ before_install:
 
 script:
   - mkdir build && cd build
-  - cmake .. -G "Unix Makefiles"
+  - cmake -G "Unix Makefiles"s ..
   - cmake --build . --config Release

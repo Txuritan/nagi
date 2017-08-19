@@ -18,6 +18,8 @@ install:
   - cmake --version
 
 build_script:
+  - cd %APPVEYOR_BUILD_FOLDER%
+
   - mkdir build-windows-gcc
   - cd build-windows-gcc
   - C:\msys64\usr\bin\bash --login -c "cmake .. -G \"MSYS Makefiles\" && cmake --build . --config Release"
