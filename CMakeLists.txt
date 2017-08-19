@@ -56,6 +56,8 @@ add_custom_command (
         COMMAND ${GCR_COMMAND}
 )
 
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-register")
+
 if (WIN32)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-incompatible-ms-struct")
     add_executable (nagi WIN32 ${nagi_SRC})
