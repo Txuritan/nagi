@@ -13,7 +13,7 @@ install:
   - 7z -y e msys2-base-x86_64-20161025.tar.xz  && 7z -y x msys2-base-x86_64-20161025.tar
   - set PATH=C:\msys64\mingw64\bin;%PATH%
 
-  - bash --login -c "pacman -S --noconfirm mingw-w64-x86_64-gtkmm3 mingw-w64-x86_64-toolchain base-devel mingw-w64-x86_64-cmake mingw-w64-x86_64-clang"
+  - C:\msys64\usr\bin\bash --login -c "pacman -S --noconfirm mingw-w64-x86_64-gtkmm3 mingw-w64-x86_64-toolchain base-devel mingw-w64-x86_64-cmake mingw-w64-x86_64-clang"
 
   - cmake --version
 
