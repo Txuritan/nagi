@@ -1,0 +1,30 @@
+os:
+  - Visual Studio 2015
+
+configuration:
+  - Release
+
+install:
+  - cd C:\
+
+  - set MSYS2_URL="https://downloads.sourceforge.net/project/msys2/Base/x86_64/msys2-base-x86_64-20161025.tar.xz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fmsys2%2Ffiles%2FBase%2Fx86_64%2F&ts=1503114236&use_mirror=gigenet"
+  - appveyor DownloadFile %MSYS2_URL% -FileName msys2-base-x86_64-20161025.tar.xz
+  - 7z e msys2-base-x86_64-20161025.tar.xz > nul  && 7z x msys2-base-x86_64-20161025.tar > nul
+  - set PATH=C:\msys64\mingw64\bin;%PATH%
+
+  - bash --login -c "pacman -S --noconfirm mingw-w64-x86_64-gtkmm3 mingw-w64-x86_64-toolchain base-devel mingw-w64-x86_64-cmake mingw-w64-x86_64-clang"
+
+  - cmake --version
+
+build_script:
+  - mkdir build-windows-gcc
+  - cd build-windows-gcc
+  - bash --login -c "cmake .. -G \"MSYS Makefiles\" && cmake --build . --config Release" > nul
+  - bash --login -c "ls -a" > nul
+
+  - cd ..
+
+  - mkdir build-windows-clang
+  - cd build-windows-clang
+  - bash --login -c "export C=C:\projects\deps\msys64\mingw64\bin\clang.exe CC=C:\projects\deps\msys64\mingw64\bin\clang.exe CXX=C:\projects\deps\msys64\mingw64\bin\clang++.exe && cmake .. -G \"MSYS Makefiles\" && cmake --build . --config Release" > nul
+  - bash --login -c "ls -a" > nul
