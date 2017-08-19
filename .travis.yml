@@ -10,5 +10,5 @@ os:
 
 before_install:
   - echo $CXX
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; brew install gtkmm3 curl < /dev/null ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; apt-get -y install libgtkmm-3.0-dev libcurl4-openssl-dev ; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install gtkmm3 curl < /dev/null ; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then apt-get -y install libgtkmm-3.0-dev libcurl4-openssl-dev ; fi
