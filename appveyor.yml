@@ -4,9 +4,9 @@ os:
 configuration:
   - Release
 
-cache:
-  - C:\msys64 -> appveyor.yml
-  - C:\msys64 -> build.bat
+#cache:
+#  - C:\msys64 -> appveyor.yml
+#  - C:\msys64 -> build.bat
 
 install:
   - cd %APPVEYOR_BUILD_FOLDER%
