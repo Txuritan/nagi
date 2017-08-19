@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/com/github/txuritan/nagi">
+        <file preprocess="xml-stripblanks">ui/WindowNagi.ui</file>
+    </gresource>
+</gresources>
