@@ -14,6 +14,7 @@ If you think you know where (or how) I the got the name, message me and we will 
     * Kitsu
     * MAL
   * Finish GUI
+  * The view part
 
 ### Fun Fact
 This is the first project that I've made that first compiled on OSX with Travis CI, I mean I use Windows how come Appveyor didn't work first.
