@@ -12,8 +12,9 @@ namespace whereami {
 #define WHEREAMI_H
 #define WAI_FUNCSPEC
 #define WAI_PREFIX(function) function
-
+        extern "C" {
 #include "whereami.c"
+        }
     }
 
     whereami_string_t whereami_path_t::dirname() const {

@@ -19,6 +19,10 @@ if (NAGI_PRINT_COMPILER)
 endif (NAGI_PRINT_COMPILER)
 
 find_package (CURL REQUIRED)
+include_directories (${CURL_INCLUDE_DIRS})
+
+find_package(Lua51 REQUIRED)
+include_directories(${LUA_INCLUDE_DIR})
 
 find_package (PkgConfig REQUIRED)
 
@@ -43,19 +47,11 @@ add_custom_command (
 )
 
 file (
-        GLOB
+        GLOB_RECURSE
 
         nagi_SRC
 
         src/*.*
-        src/nagi/*.*
-        src/nagi/gui/*.*
-        src/nagi/gui/widgets/*.*
-        src/nagi/json/*.*
-
-        src/thirdparty/*.*
-        src/thirdparty/cpr/*.*
-        src/thirdparty/tinyxml2/*.*
 )
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-ignored-attributes")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-register -Wno-ignored-attributes")
@@ -68,9 +64,4 @@ else ()
     add_executable (nagi ${nagi_SRC})
 endif ()
 
-if (${CURL_FOUND})
-    include_directories (${CURL_INCLUDE_DIRS})
-    target_link_libraries (nagi ${CURL_LIBRARIES})
-endif (${CURL_FOUND})
-
-target_link_libraries (nagi ${GTKMM_LIBRARIES})
+target_link_libraries (nagi ${CURL_LIBRARIES} ${LUA_LIBRARIES} ${GTKMM_LIBRARIES})
